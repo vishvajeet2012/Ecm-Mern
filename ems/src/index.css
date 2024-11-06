@@ -10,3 +10,17 @@ color: #fff;
 body{
   background-color: #111;
 }
+
+
+
+
+.hide-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: thin;    
+  scrollbar-color: transparent transparent; 
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0; 
+  background: transparent;
+}
