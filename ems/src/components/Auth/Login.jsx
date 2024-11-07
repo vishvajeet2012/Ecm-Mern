@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-function Login() {
+function Login({handeLogin}) {
+  console.log(handeLogin)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -8,6 +9,7 @@ function Login() {
     e.preventDefault();
     setPassword("");
     setEmail("");
+    handeLogin(email,password)
   }
 
   function handeEmail(e) {
