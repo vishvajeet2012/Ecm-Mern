@@ -168,5 +168,5 @@ const employeeData = {
 
 
   export const setLocalStorage = ()=>{
-    localStorage.setItem('employees' ,JSON.)
+    localStorage.setItem('employees' ,JSON.stringify(employeeData))
   }
