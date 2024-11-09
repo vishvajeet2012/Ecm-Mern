@@ -22,7 +22,7 @@ function App() {
   }
 
     const data = useContext(AuthContext)
-    console.log(data)
+    console.warn(data.user.admin)
 
   useEffect(() => {
     setLocalStorage();
