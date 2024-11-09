@@ -6,7 +6,7 @@ function AcceptTask() {
           <h3 className="bg-green-300 text-sm px-3 py-2 rounded">High</h3>
           <h4 className=" text-sm">11/6/2024</h4>
           </div>
-          <h2 className="mt-5 text-xl font-semibold  ">Make Youtube video</h2>
+          <h2 className="mt-5 text-xl font-semibold  ">AcceptTask</h2>
           <p className="text-sm mt-2 ">this is vishu iam from indian iam 100 year old</p>
 
         </div>
