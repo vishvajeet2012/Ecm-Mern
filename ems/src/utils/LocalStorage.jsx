@@ -5,6 +5,12 @@ const employeeData = {
       "name": "Rajesh Kumar",
       "email": "employee1@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 2,
+        "completed": 1,
+        "failed": 0
+      },
+      "totalTasks": 3,
       "tasks": [
         {
           "active": true,
@@ -43,6 +49,12 @@ const employeeData = {
       "name": "Anita Sharma",
       "email": "employee2@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 1,
+        "completed": 1,
+        "failed": 0
+      },
+      "totalTasks": 2,
       "tasks": [
         {
           "active": true,
@@ -71,6 +83,12 @@ const employeeData = {
       "name": "Vikram Patel",
       "email": "employee3@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 1,
+        "completed": 1,
+        "failed": 1
+      },
+      "totalTasks": 2,
       "tasks": [
         {
           "active": true,
@@ -99,6 +117,12 @@ const employeeData = {
       "name": "Suresh Gupta",
       "email": "employee4@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 1,
+        "completed": 1,
+        "failed": 0
+      },
+      "totalTasks": 2,
       "tasks": [
         {
           "active": true,
@@ -127,6 +151,12 @@ const employeeData = {
       "name": "Pooja Reddy",
       "email": "employee5@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 2,
+        "completed": 1,
+        "failed": 0
+      },
+      "totalTasks": 3,
       "tasks": [
         {
           "active": true,
@@ -162,6 +192,7 @@ const employeeData = {
     }
   ]
 };
+
 
   const adminData = {
     "admin": {

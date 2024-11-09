@@ -10,7 +10,7 @@ function EmpoyeeDashboard({data}){
 
     
         <div className="p-10 bg-[#1c1c1c] h-screen">
-        <h1>{data.id}</h1>
+       
         <Header  data={data}/>
             <TaskNumber data={data}/>
 
