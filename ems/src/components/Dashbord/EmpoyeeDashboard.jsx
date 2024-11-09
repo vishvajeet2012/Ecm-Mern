@@ -2,14 +2,19 @@ import Header from "../other/Header"
 import TaskNumber from "../other/TaskNumber"
 import TaskList from "../TaskList/TaskList"
 
-function EmpoyeeDashboard(){
+function EmpoyeeDashboard({data}){
+    console.log({data})
     return (
-        <>
-        <div className="p-10 bg-[#1c1c1c] h-screen">
-        <Header/>
-            <TaskNumber/>
 
-            <TaskList/>
+        <>
+
+    
+        <div className="p-10 bg-[#1c1c1c] h-screen">
+        <h1>{data.id}</h1>
+        <Header  data={data}/>
+            <TaskNumber data={data}/>
+
+            <TaskList data={data}/>
                     </div>
         
 

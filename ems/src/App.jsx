@@ -10,19 +10,34 @@ import { AuthContext } from "./context/AuthProvider";
 
 function App() {
   const [user, setuser] = useState(null);
+  const [loggedInUserData , setLoggedInUserData] =useState(null)
+  const data = useContext(AuthContext)
+ 
+              useEffect(()=>{
+                if(data){
+                  const loggedInUser= localStorage.getItem("loggedInUser")
+                }
+              },{data})
 
   function handeLogin(email, password) {
+
     if (email === "vishu@admin.com" && password === "123") {
+          localStorage.setItem('loggedInUser',JSON.stringify({role:"admin"}))
       setuser("admin");
-    } else if (email === "user@me.com" && password === "123") {
-      setuser("employee");
-    } else {
+    } else if (data) {
+      const employeeFind =  data?.user?.employee?.employees.find((e)=>e.email == email && e.password === password)
+       
+      if(employeeFind){
+      localStorage.setItem('loggedInUser',JSON.stringify({role:'employee'}))
+    setLoggedInUserData(employeeFind)
+      setuser("employee");}
+     } 
+    else {
       alert("invalid ");
     }
   }
 
-    const data = useContext(AuthContext)
-    console.warn(data.user.employee.employees)
+   
 
   useEffect(() => {
     setLocalStorage();
@@ -31,7 +46,7 @@ function App() {
   return (
     <>
       {!user ? <Login handeLogin={handeLogin} /> : ""} {/*  using propss */}
-      {user === "admin" ? <AdminDashbord /> : <EmpoyeeDashboard />}
+      {user === "admin" ? <AdminDashbord /> :(user == "employee" ?  <EmpoyeeDashboard data={loggedInUserData}/> : null)}
       {/* <EmpoyeeDashboard /> */}
       {/* <AdminDashbord/> */}
     </>
