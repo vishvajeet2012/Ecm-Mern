@@ -1,9 +1,10 @@
-function CompleteTask() {
+function CompleteTask({value}) {
+  console.log(value)
     return ( 
         <>
               <div className="flex-shrink-0 h-full w-[300px] p-5 bg-blue-600 rounded-xl">
         <div className="flex justify-between items-center">
-          <h3 className="bg-green-300 text-sm px-3 py-2 rounded">High</h3>
+          <h3 className="bg-green-300 text-sm px-3 py-2 rounded">{}</h3>
           <h4 className=" text-sm">11/6/2024</h4>
           </div>
           <h2 className="mt-5 text-xl font-semibold  ">CompletetTask</h2>
