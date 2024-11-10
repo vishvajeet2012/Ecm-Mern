@@ -9,18 +9,23 @@ import { setLocalStorage } from "./utils/LocalStorage";
 import { AuthContext } from "./context/AuthProvider";
 
 function App() {
+
   const [user, setuser] = useState(null);
   const [loggedInUserData , setLoggedInUserData] =useState(null)
   const data = useContext(AuthContext)
  
-              useEffect(()=>{
-                if(data){
-                  const loggedInUser= localStorage.getItem("loggedInUser")
-                }
-              },{data})
+  
+              // useEffect(()=>{
+              //     const loggedInUser= localStorage.getItem("loggedInUser")
+              //     if(loggedInUser){
+              //         const userData = JSON.parse(loggedInUser)
+              //         setuser(userData.role)
+              //         // setLoggedInUserData(userData.sup)
+              //       }
+              // },[])
 
   function handeLogin(email, password) {
-
+    
     if (email === "vishu@admin.com" && password === "123") {
           localStorage.setItem('loggedInUser',JSON.stringify({role:"admin"}))
       setuser("admin");
@@ -28,7 +33,7 @@ function App() {
       const employeeFind =  data?.user?.employee?.employees.find((e)=>e.email == email && e.password === password)
        
       if(employeeFind){
-      localStorage.setItem('loggedInUser',JSON.stringify({role:'employee'}))
+      localStorage.setItem('loggedInUser',JSON.stringify({role:'employee', sup:"employee"}))
     setLoggedInUserData(employeeFind)
       setuser("employee");}
      } 

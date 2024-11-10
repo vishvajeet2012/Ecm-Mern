@@ -1,4 +1,5 @@
-function NewTask() {
+function NewTask({data}) {
+
     return ( 
         <>
               <div className="flex-shrink-0 h-full w-[300px] p-5 bg-green-600 rounded-xl">

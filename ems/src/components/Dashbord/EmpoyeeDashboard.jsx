@@ -3,7 +3,8 @@ import TaskNumber from "../other/TaskNumber"
 import TaskList from "../TaskList/TaskList"
 
 function EmpoyeeDashboard({data}){
-    console.log({data})
+    const task = data
+   
     return (
 
         <>

@@ -1,11 +1,11 @@
-import Header from "../other/Header";
+import AdminHeader from "../other/AdminHeader";
 import TaskFrom from "../other/TaskFrom";
 
 function AdminDashbord() {
   return (
     <>
       <div className="h-screen w-full p-10 ">
-        <Header />
+        <AdminHeader/>
 <TaskFrom></TaskFrom>
      
       </div>
