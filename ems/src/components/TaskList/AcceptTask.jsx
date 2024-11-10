@@ -1,5 +1,5 @@
 function AcceptTask(value) {
-
+console.log(value)
     return ( 
         <>
               <div className="flex-shrink-0 h-full w-[300px] p-5 bg-red-800 rounded-xl">
