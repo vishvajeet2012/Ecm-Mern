@@ -4,6 +4,7 @@ import FailedTask from "./FailedTask";
 import NewTask from "./NewTask";
 
 function TaskList({ data }) {
+
   return (
     <>
       <div
@@ -14,10 +15,10 @@ function TaskList({ data }) {
           data.tasks.map((value,index) => (
  
             <div  className="flex  items-center gap-4">
-              {value.active && <AcceptTask key={value.index} data={value} />}
-              {value.newTask && <NewTask key={value.index}  data={value}/>}
-              {value.completed && <CompleteTask  key={value.index} data={value}  />}
-              {value.failed && <FailedTask  key={value.index} data={value} />}
+              {value.active && <AcceptTask key={index} data={value} />}
+              {value.newTask && <NewTask key={index}  data={value}/>}
+              {value.completed && <CompleteTask  key={index} data={value}  />}
+              {value.failed && <FailedTask  key={index} data={value} />}
             </div>
                     
        

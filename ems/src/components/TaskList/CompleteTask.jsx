@@ -1,5 +1,5 @@
 function CompleteTask({value}) {
-  console.log(value)
+
     return ( 
         <>
               <div className="flex-shrink-0 h-full w-[300px] p-5 bg-blue-600 rounded-xl">
