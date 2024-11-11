@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function TaskForm() {
   const [task, setTask] = useState("");
@@ -8,6 +8,9 @@ function TaskForm() {
   const [description, setDescription] = useState("");
   const [tasks, setTasks] = useState([]);
 
+  useEffect(()=>{
+    console.log(tasks)
+  },[tasks])
   function formHandle(e) {
     e.preventDefault();
 
@@ -22,6 +25,7 @@ function TaskForm() {
 
    
     setTasks([...tasks, newTask]);
+
 
    
     setTask("");
@@ -91,7 +95,7 @@ function TaskForm() {
       </form>
 
  
-      <div className="mt-5 text-gray-300">
+      {/* <div className="mt-5 text-gray-300">
         <h3 className="text-lg mb-2">Tasks List</h3>
         <ul>
           {tasks.map((task, index) => (
@@ -104,7 +108,7 @@ function TaskForm() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }
