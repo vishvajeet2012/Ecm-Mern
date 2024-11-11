@@ -6,16 +6,24 @@ function TaskForm() {
   const [assignee, setAssignee] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
+  const [tasks, setTasks] = useState([]);
 
   function formHandle(e) {
     e.preventDefault();
-    console.log("titile:", task);
-    console.log("Date:", date);
-    console.log("Assignee:", assignee);
-    console.log("category:", category);
-    console.log("Description:", description);
 
-    // Clear form fields after submission
+   // store all form data in array 
+    const newTask = {
+      task,
+      date,
+      assignee,
+      category,
+      description,
+    };
+
+   
+    setTasks([...tasks, newTask]);
+
+   
     setTask("");
     setDate("");
     setAssignee("");
@@ -81,6 +89,22 @@ function TaskForm() {
           </button>
         </div>
       </form>
+
+ 
+      <div className="mt-5 text-gray-300">
+        <h3 className="text-lg mb-2">Tasks List</h3>
+        <ul>
+          {tasks.map((task, index) => (
+            <li key={index} className="mb-2 p-2 border border-gray-500 rounded">
+              <strong>Task:</strong> {task.task} <br />
+              <strong>Date:</strong> {task.date} <br />
+              <strong>Assignee:</strong> {task.assignee} <br />
+              <strong>Category:</strong> {task.category} <br />
+              <strong>Description:</strong> {task.description}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
