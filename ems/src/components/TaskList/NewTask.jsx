@@ -1,5 +1,5 @@
 function NewTask(value) {
-console.warn(value)
+
     return ( 
         <>
               <div className="flex-shrink-0 h-full w-[300px] p-5 bg-yellow-900 rounded-xl">

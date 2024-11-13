@@ -8,51 +8,51 @@ import { setLocalStorage } from "./utils/LocalStorage";
 import { AuthContext } from "./context/AuthProvider";
 
 function App() {
-
-  const [user, setuser] = useState(null);
-  const [loggedInUserData , setLoggedInUserData] =useState(null)
-  const data = useContext(AuthContext)
- 
-  
-              // useEffect(()=>{
-              //     const loggedInUser= localStorage.getItem("loggedInUser")
-              //     if(loggedInUser){
-              //         const userData = JSON.parse(loggedInUser)
-              //         setuser(userData.role)
-              //         // setLoggedInUserData(userData.sup)
-              //       }
-              // },[])
+  const [users, setuser] = useState(null); // Keeps track of logged-in role (admin/employee)
+  const [loggedInUserData, setLoggedInUserData] = useState(null); // Keeps specific employee data
+  const { user, setUser } = useContext(AuthContext); // Access AuthContext data
 
   function handeLogin(email, password) {
-    
     if (email === "vishu@admin.com" && password === "123") {
-          localStorage.setItem('loggedInUser',JSON.stringify({role:"admin"}))
+      // Admin login
+      localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
       setuser("admin");
-    } else if (data) {
-      const employeeFind =  data?.user?.employee?.employees.find((e)=>e.email == email && e.password === password)
-       
-      if(employeeFind){
-      localStorage.setItem('loggedInUser',JSON.stringify({role:'employee', sup:"employee"}))
-    setLoggedInUserData(employeeFind)
-      setuser("employee");}
-     } 
-    else {
-      alert("invalid ");
+  // Update AuthContext with admin role
+
+    } else if (user) {
+      // Employee login
+      const employeeFind = user?.employees.find(
+        (e) => e.email === email && e.password === password
+      );
+
+      if (employeeFind) {
+        localStorage.setItem(
+          "loggedInUser",
+          JSON.stringify({ role: "employee", sup: "employee" })
+        );
+        setLoggedInUserData(employeeFind); // Set specific employee data
+        setuser("employee");
+        setUser(employeeFind); // Update AuthContext with employee data
+        
+      } else {
+        alert("Invalid credentials");
+      }
     }
   }
 
-   
-
   useEffect(() => {
-    setLocalStorage();
-  });
+    setLocalStorage(); // Set up any required local storage
+  }, []);
 
   return (
     <>
-      {!user ? <Login handeLogin={handeLogin} /> : ""} {/*  using propss */}
-      {user === "admin" ? <AdminDashbord /> :(user == "employee" ?  <EmpoyeeDashboard data={loggedInUserData}/> : null)}
-      {/* <EmpoyeeDashboard /> */}
-      {/* <AdminDashbord/> */}
+      {!users ? (
+        <Login handeLogin={handeLogin} />
+      ) : users === "admin" ? (
+        <AdminDashbord/>
+      ) : users === "employee" ? (
+        <EmpoyeeDashboard data={loggedInUserData} />
+      ) : null}
     </>
   );
 }

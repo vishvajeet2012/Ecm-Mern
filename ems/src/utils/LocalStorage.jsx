@@ -19,7 +19,7 @@ const employeeData = {
         {
           "active": 3,
           "newTask": 1,
-          "completed": 5,
+          "completed": 5, 
           "failed": 0,
           "title": "Complete sales report",
           "description": "Finalize and submit the sales report for the month.",
@@ -36,6 +36,16 @@ const employeeData = {
           "date": "2024-11-05",
           "category": "Customer Service"
         }
+        ,{
+        "active":10,
+        "newTask": 1,
+        "completed":20,
+      "failed":0,
+      "title": "Sumbit sales reporT",
+      "description": "SEND SALES REPORT TO HEADOFFICE",
+      "date": "2024-12-2",
+      "category": "Report"
+      }
       ]
     },
     {
