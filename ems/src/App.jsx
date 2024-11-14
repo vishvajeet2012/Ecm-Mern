@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-
 import "./App.css";
 import Login from "./components/Auth/Login";
 import EmpoyeeDashboard from "./components/Dashbord/EmpoyeeDashboard";
@@ -8,32 +7,38 @@ import { setLocalStorage } from "./utils/LocalStorage";
 import { AuthContext } from "./context/AuthProvider";
 
 function App() {
-  const [users, setuser] = useState(null); // Keeps track of logged-in role (admin/employee)
-  const [loggedInUserData, setLoggedInUserData] = useState(null); // Keeps specific employee data
-  const { user, setUser } = useContext(AuthContext); // Access AuthContext data
+  const [users, setuser] = useState(null); 
+  const [loggedInUserData, setLoggedInUserData] = useState(null);
+  const { user, setUser } = useContext(AuthContext); 
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      const userData = JSON.parse(loggedInUser);
+      setuser(userData.role);
+      setLoggedInUserData(userData.data);
+    }
+  }, []);
+    
 
   function handeLogin(email, password) {
     if (email === "vishu@admin.com" && password === "123") {
-      // Admin login
       localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
       setuser("admin");
-  // Update AuthContext with admin role
-
     } else if (user) {
-      // Employee login
       const employeeFind = user?.employees.find(
         (e) => e.email === email && e.password === password
+        
       );
-
+      setLoggedInUserData(employeeFind);
       if (employeeFind) {
         localStorage.setItem(
           "loggedInUser",
-          JSON.stringify({ role: "employee", sup: "employee" })
+          JSON.stringify({ role: "employee", data: employeeFind })
         );
-        setLoggedInUserData(employeeFind); // Set specific employee data
+     
         setuser("employee");
-        setUser(employeeFind); // Update AuthContext with employee data
-        
+        setUser(employeeFind); 
       } else {
         alert("Invalid credentials");
       }
@@ -41,17 +46,28 @@ function App() {
   }
 
   useEffect(() => {
-    setLocalStorage(); // Set up any required local storage
+    setLocalStorage(); 
   }, []);
 
+// 
+//   function handeLogout() {
+//    
+//    localStorage.removeItem("loggedInUser");
+
+//   // Reset the state to logged out
+//       //setuser(null);
+//       setLoggedInUserData(null);
+//     // setUser(null); // Clear AuthContext state
+//  }
+  console.log(user)
   return (
     <>
       {!users ? (
         <Login handeLogin={handeLogin} />
       ) : users === "admin" ? (
-        <AdminDashbord/>
+        <AdminDashbord changeUser={setuser} />
       ) : users === "employee" ? (
-        <EmpoyeeDashboard data={loggedInUserData} />
+        <EmpoyeeDashboard changeUser={setuser} data={loggedInUserData} />
       ) : null}
     </>
   );

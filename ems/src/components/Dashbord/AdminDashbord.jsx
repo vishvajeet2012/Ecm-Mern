@@ -1,14 +1,15 @@
 import AdminHeader from "../other/AdminHeader";
-import TaskFrom from "../other/TaskFrom";
+import TaskFrom from "../other/TaskFrom"
 
-function AdminDashbord() {
+function AdminDashbord(props) {
+  console.log("this" + props.changeUser);
   return (
     <>
       <div className="h-screen w-full p-10 ">
-        <AdminHeader/>
-<TaskFrom></TaskFrom>
-     
-      </div>
+      
+        <AdminHeader changeUser={props.changeUser} />
+     <TaskFrom/>
+            </div>
     </>
   );
 }

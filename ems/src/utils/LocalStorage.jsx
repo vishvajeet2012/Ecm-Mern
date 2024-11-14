@@ -35,17 +35,8 @@ const employeeData = {
           "description": "Reach out to clients regarding feedback on recent orders.",
           "date": "2024-11-05",
           "category": "Customer Service"
-        }
-        ,{
-        "active":10,
-        "newTask": 1,
-        "completed":20,
-      "failed":0,
-      "title": "Sumbit sales reporT",
-      "description": "SEND SALES REPORT TO HEADOFFICE",
-      "date": "2024-12-2",
-      "category": "Report"
-      }
+        },
+     
       ]
     },
     {

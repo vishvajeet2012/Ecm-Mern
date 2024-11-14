@@ -1,13 +1,9 @@
-import { useContext } from "react";
 import AcceptTask from "./AcceptTask";
 import CompleteTask from "./CompleteTask";
 import FailedTask from "./FailedTask";
 import NewTask from "./NewTask";
-import { AuthContext } from "../../context/AuthProvider";
 
 function TaskList({ data }) {
- const {user , setUser} =useContext(AuthContext)
- console.log(user)
 
   return (
     <>

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import EmployeeStatus from "./EmployeeStatus";
 import { AuthContext } from '../../context/AuthProvider';
 
-function TaskForm() {
+function TaskFrom() {
   const user = useContext(AuthContext);
   const [title, setTask] = useState("");
   const [date, setDate] = useState("");
@@ -129,4 +129,4 @@ console.log(user)
   );
 }
 
-export default TaskForm;
+export default TaskFrom;
