@@ -7,7 +7,7 @@ const employeeData = {
       "password": "123",
       "tasks": [
         {
-          "active": 4,
+          "active": 0,
           "newTask": 2,
           "completed": 1,
           "failed": 0,
@@ -17,7 +17,7 @@ const employeeData = {
           "category": "Inventory"
         },
         {
-          "active": 3,
+          "active": 0,
           "newTask": 1,
           "completed": 5, 
           "failed": 0,
@@ -27,7 +27,7 @@ const employeeData = {
           "category": "Reports"
         },
         {
-          "active": 2,
+          "active": 0,
           "newTask": 0,
           "completed": 4,
           "failed": 1,
