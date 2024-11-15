@@ -4,7 +4,7 @@ import TaskNumber from "../other/TaskNumber"
 import TaskList from "../TaskList/TaskList"
 function EmployeeDashboard({ data, changeUser }) {
   useEffect(() => {
-    console.log("Data updated:", data);
+  
   }, [data]); // Logs only when `data` changes
 
   return (
