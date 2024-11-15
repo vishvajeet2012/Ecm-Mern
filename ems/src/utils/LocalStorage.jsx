@@ -7,28 +7,28 @@ const employeeData = {
       "password": "123",
       "tasks": [
         {
-          "active": 0,
+          "active": null,
           "newTask": 2,
           "completed": 1,
-          "failed": 0,
+          "failed": null,
           "title": "Update inventory list",
           "description": "Review and update the current inventory list to include new items.",
           "date": "2024-11-07",
           "category": "Inventory"
         },
         {
-          "active": 0,
+          "active": null,
           "newTask": 1,
           "completed": 5, 
-          "failed": 0,
+          "failed": null,
           "title": "Complete sales report",
           "description": "Finalize and submit the sales report for the month.",
           "date": "2024-10-31",
           "category": "Reports"
         },
         {
-          "active": 0,
-          "newTask": 0,
+          "active": null,
+          "newTask": null,
           "completed": 4,
           "failed": 1,
           "title": "Client follow-up",

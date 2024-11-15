@@ -5,7 +5,7 @@ import TaskList from "../TaskList/TaskList"
 function EmployeeDashboard({ data, changeUser }) {
   useEffect(() => {
   
-  }, [data]); // Logs only when `data` changes
+  }, [data]); 
 
   return (
     <div className="p-10 bg-[#1c1c1c] h-screen">
