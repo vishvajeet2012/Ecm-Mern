@@ -22,7 +22,23 @@ function Login({ handeLogin }) {
   return (
     <>
       <div className="flex h-screen w-screen items-center justify-center p-4 sm:p-6 md:p-8">
-        <div className="border-2 rounded-xl border-emerald-600 p-8  w-full max-w-md">
+        <div className="border-2 rounded-xl border-emerald-600 p-8 w-full max-w-md">
+          
+          {/* Static Credentials Display */}
+          <div className="mb-6 text-sm text-white space-y-2">
+            <div className="border border-emerald-600 p-3 rounded-lg">
+              <p className="font-semibold text-emerald-400">Employee Login</p>
+              <p>Email: <span className="text-gray-300">1@1.com</span></p>
+              <p>Password: <span className="text-gray-300">123</span></p>
+            </div>
+            <div className="border border-emerald-600 p-3 rounded-lg mt-2">
+              <p className="font-semibold text-emerald-400">Admin Login</p>
+              <p>Email: <span className="text-gray-300">vishu@admin.com</span></p>
+              <p>Password: <span className="text-gray-300">123</span></p>
+            </div>
+          </div>
+
+          {/* Login Form */}
           <form
             onSubmit={(e) => {
               handelFrom(e);
